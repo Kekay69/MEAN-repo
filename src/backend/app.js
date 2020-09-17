@@ -11,14 +11,14 @@ const app = express();
 //     res.send('Hello from express');
 // });
 
-app.use(bodyParser.jason());
+app.use(bodyParser.json());
 // similarly is capable of parser all kinds of different bodies as below
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origen", "*");
     res.setHeader(
-        "Access-Control-Allow-Header",
+        "Access-Control-Allow-Headers",
         "Origin, X-Requested-Width, Content-Type, Accept"
     );
     res.setHeader(
@@ -38,7 +38,7 @@ app.post("/api/posts", (req, res, next) => {
 
 app.get("/api/post", (req, res, next) => {
     const posts = [{
-            id: "fadf124211",
+            id: "fadf12421l",
             title: "First server-side post",
             content: "this is coming from the server"
         },
